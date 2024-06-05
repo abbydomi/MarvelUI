@@ -9,12 +9,34 @@ import Foundation
 
 class CharacterAPIClient: BaseAPIClient {
     
-    func getCharacters(limit: Int, offset: Int) async throws -> Data {
+    func getCharacters(limit: Int, offset: Int, name: String, orderBy: OrderSelection) async throws -> Data {
         let path = "characters"
-        let queryItems = [
-                    URLQueryItem(name: "limit", value: String(limit)),
-                    URLQueryItem(name: "offset", value: String(offset))
-                ]
+        var orderByParsed = "name"
+        switch orderBy {
+        case .nameAscending:
+            orderByParsed = "name"
+        case .nameDescending:
+            orderByParsed = "-name"
+        case .modifiedAscending:
+            orderByParsed = "modified"
+        case .modifiedDescending:
+            orderByParsed = "-modified"
+        }
+        var queryItems: [URLQueryItem] = []
+        if !name.isEmpty {
+            queryItems = [
+                URLQueryItem(name: "limit", value: String(limit)),
+                URLQueryItem(name: "offset", value: String(offset)),
+                URLQueryItem(name: "nameStartsWith", value: name),
+                URLQueryItem(name: "orderBy", value: orderByParsed)
+            ]
+        } else {
+            queryItems = [
+                URLQueryItem(name: "limit", value: String(limit)),
+                URLQueryItem(name: "offset", value: String(offset)),
+                URLQueryItem(name: "orderBy", value: orderByParsed)
+            ]
+        }
         return try await request(path, extraQueryItems: queryItems).0
     }
 }
