@@ -6,14 +6,13 @@
 //
 
 import Foundation
-
 import SwiftUI
 
 final class Router: ObservableObject {
     
     public enum Destination: Codable, Hashable {
         case settings
-        case characterDetail
+        case characterDetail(characterId: Int)
     }
     
     @Published var path = NavigationPath()
@@ -26,7 +25,7 @@ final class Router: ObservableObject {
         path.removeLast()
     }
     
-    func nextView(_ destination: Destination) {
+    func navigateTo(_ destination: Destination) {
         path.append(destination)
     }
 }

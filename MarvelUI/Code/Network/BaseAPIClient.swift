@@ -18,9 +18,20 @@ class BaseAPIClient {
         }
     }
     
-    func request(_ relativePath: String?) async throws -> (Data, HTTPURLResponse) {
-        let urlAbsolute = baseURL.appendingPathComponent(relativePath!)
-        let (data, response) = try await URLSession.shared.data(from: urlAbsolute)
+    func request(_ relativePath: String, extraQueryItems: [URLQueryItem] = []) async throws -> (Data, HTTPURLResponse) {
+        
+        let timestamp = "\(Date().timeIntervalSince1970)"
+        let hash = "\(timestamp)\(Environment.shared.privateKey)\(Environment.shared.apiKey)".md5()
+        
+        let urlString = baseURL.appendingPathComponent(relativePath)
+        var components = URLComponents(url: urlString, resolvingAgainstBaseURL: true)
+        let commonQueryItems = [
+                    URLQueryItem(name: "ts", value: timestamp),
+                    URLQueryItem(name: "hash", value: hash),
+                    URLQueryItem(name: "apikey", value: Environment.shared.apiKey)
+                ]
+        components?.queryItems = commonQueryItems + extraQueryItems
+        let (data, response) = try await URLSession.shared.data(from: components!.url!)
         
         guard let response = response as? HTTPURLResponse else {
             throw NetworkError.badResponse
