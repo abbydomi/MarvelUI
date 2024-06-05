@@ -18,15 +18,6 @@ struct HomeView: View {
     @State private var searchText = ""
     @State private var orderSelection = OrderSelection.nameAscending
     
-    enum OrderSelection: String, Codable, Identifiable, CaseIterable  {
-        var id: Self { self }
-        
-        case nameAscending = "Name A-Z"
-        case nameDescending = "Name Z-A"
-        case modifiedAscending = "Modified by Latest"
-        case modifiedDescending = "Modified by Oldest"
-    }
-    
     var body: some View {
         ToolbarView()
         if showLoading {
@@ -41,6 +32,9 @@ struct HomeView: View {
                             Text("Search...")
                                 .foregroundStyle(.accent)
                         })
+                        .onSubmit {
+                            viewModel.searchCharacter(name: searchText, orderBy: orderSelection)
+                        }
                         .foregroundStyle(.accent)
                         .padding()
                     Picker("Order by", selection: $orderSelection) {
@@ -50,11 +44,8 @@ struct HomeView: View {
                                 .font(.system(size: 100, weight: .bold, design: .rounded))
                         }
                     }
-                    .onChange(of: orderSelection, { _, _ in
-                        // viewModel.handleGenderPicker(genderSelection)
-                    })
                     Button(action: {
-                        // viewModel search
+                        viewModel.searchCharacter(name: searchText, orderBy: orderSelection)
                     }, label: {
                         Image(systemName: "magnifyingglass")
                             .resizable()

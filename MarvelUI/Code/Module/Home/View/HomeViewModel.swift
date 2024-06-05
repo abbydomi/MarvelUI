@@ -16,6 +16,9 @@ class HomeViewModel {
     private let homeDataManager = HomeDataManager()
     private var offset = 0
     private var page = 0
+    private var orderSelection = OrderSelection.nameAscending
+    private var searchName = ""
+    
     var cancellables = Set<AnyCancellable>()
     
     enum Constants {
@@ -45,17 +48,26 @@ class HomeViewModel {
         offset = page * Constants.limit
         getCharacters(offset: offset)
     }
-
+    
+    func searchCharacter(name: String, orderBy: OrderSelection) {
+        state.send(.loading)
+        offset = 0
+        page = 0
+        getCharacters(offset: 0, searchQuery: name, orderBy: orderBy)
+    }
 }
 
 // MARK: - Methods
 
 private extension HomeViewModel {
     
-    private func getCharacters(offset: Int) {
+    private func getCharacters(offset: Int, searchQuery: String = "", orderBy: OrderSelection = OrderSelection.nameAscending) {
         Task {
             do {
-                let characterListDecorators = try await homeDataManager.getCharacters(limit: Constants.limit, offset: offset)
+                let characterListDecorators = try await homeDataManager.getCharacters(limit: Constants.limit,
+                                                                                      offset: offset,
+                                                                                      name: searchQuery,
+                                                                                      orderBy: orderBy)
                 state.send(.success(characterListDecorators, page))
             } catch NetworkError.badResponse {
                 print("bad response")
@@ -78,4 +90,13 @@ private extension HomeViewModel {
 enum HomeState {
     case loading
     case success([CharacterListDecorator], Int)
+}
+
+enum OrderSelection: String, Codable, Identifiable, CaseIterable  {
+    var id: Self { self }
+    
+    case nameAscending = "Name A-Z"
+    case nameDescending = "Name Z-A"
+    case modifiedAscending = "Modified by Latest"
+    case modifiedDescending = "Modified by Oldest"
 }
