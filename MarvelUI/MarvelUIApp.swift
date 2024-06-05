@@ -14,9 +14,15 @@ struct MarvelUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack(path: $router.path) {
                 HomeView()
                     .environmentObject(router)
+                    .navigationDestination(for: Router.Destination.self) { destination in
+                        switch destination {
+                        case .settings: SettingsView()
+                        default: Color.clear
+                        }
+                    }
             }
         }
     }

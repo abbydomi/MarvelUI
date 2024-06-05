@@ -20,6 +20,7 @@ struct HomeView: View {
     
     var body: some View {
         ToolbarView()
+            .environmentObject(router)
         if showLoading {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: Color.accentColor))
