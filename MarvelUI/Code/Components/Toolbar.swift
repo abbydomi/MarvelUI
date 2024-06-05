@@ -27,6 +27,7 @@ struct ToolbarView: View {
                 HStack {
                     Spacer()
                     Button(action: {
+                        print("hehehooho")
                         router.navigateTo(.settings)
                     }, label: {
                         Image(systemName: "gear")
