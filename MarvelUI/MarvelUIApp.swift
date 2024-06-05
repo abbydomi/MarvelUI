@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct MarvelUIApp: App {
+    
+    @StateObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            NavigationStack {
+                HomeView()
+                    .environmentObject(router)
+            }
         }
     }
 }
