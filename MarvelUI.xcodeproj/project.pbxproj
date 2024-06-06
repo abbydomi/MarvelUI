@@ -209,7 +209,6 @@
 		288340522C10AEDA0032D97A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				288340532C10AEE30032D97A /* Toolbar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -374,6 +373,7 @@
 			children = (
 				288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */,
 				288340A22C11F11E0032D97A /* LoaderView.swift */,
+				288340532C10AEE30032D97A /* Toolbar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
