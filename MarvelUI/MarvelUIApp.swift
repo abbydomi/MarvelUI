@@ -9,9 +9,29 @@ import SwiftUI
 
 @main
 struct MarvelUIApp: App {
+    
+    @StateObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack(path: $router.path) {
+                HomeView()
+                    .navigationDestination(for: Router.Destination.self) { destination in
+                        switch destination {
+                        case .settings: 
+                            SettingsView()
+                        case .characterDetail(let characterId):
+                            let viewModel = CharacterDetailViewModel(characterID: characterId)
+                            CharacterDetailView(viewModel: viewModel)
+                        case .webView(url: let url):
+                            WebView(url: url)
+                        }
+                    }
+            }
+            .alert(router.errorMessage, isPresented: $router.showError, actions: {
+
+            })
+            .environmentObject(router)
         }
     }
 }
