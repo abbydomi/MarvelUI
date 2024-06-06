@@ -28,6 +28,9 @@ struct MarvelUIApp: App {
                         }
                     }
             }
+            .alert(router.errorMessage, isPresented: $router.showError, actions: {
+
+            })
             .environmentObject(router)
         }
     }

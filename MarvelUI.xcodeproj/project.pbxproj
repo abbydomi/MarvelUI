@@ -355,6 +355,7 @@
 		2883409E2C11F0670032D97A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				288340B32C1205730032D97A /* View */,
 				2883409F2C11F06A0032D97A /* Components */,
 			);
 			path = Common;
@@ -378,6 +379,13 @@
 				288340AB2C11F50A0032D97A /* PageControl.swift */,
 			);
 			path = Compoments;
+			sourceTree = "<group>";
+		};
+		288340B32C1205730032D97A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

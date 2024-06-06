@@ -62,6 +62,8 @@ struct CharacterDetailView: View {
             case .comics(let comics):
                 self.comics = comics
                 showLoading = false
+            case .failure(let error):
+                router.handleError(error)
             }
         }
         .store(in: &viewModel.cancellables)

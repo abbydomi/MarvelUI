@@ -33,15 +33,15 @@ private extension CharacterDetailViewModel {
                 let decorator = try await characterDataManager.getCharacter(id: id)
                 state.send(.success(decorator))
             } catch NetworkError.badResponse {
-                print("bad response")
+                state.send(.failure(.badResponse))
             } catch NetworkError.needsAuth {
-                print("auth")
+                state.send(.failure(.needsAuth))
             } catch NetworkError.notFound {
-                print("not found")
+                state.send(.failure(.notFound))
             } catch NetworkError.serviceDown {
-                print("service down")
+                state.send(.failure(.serviceDown))
             } catch {
-                print(String(describing: error))
+                state.send(.failure(.unknown))
             }
         }
     }
@@ -52,8 +52,16 @@ private extension CharacterDetailViewModel {
                 let comics = try await characterDataManager.getComicImagesFromCharacter(id: id)
                 print(comics)
                 state.send(.comics(comics))
+            } catch NetworkError.badResponse {
+                state.send(.failure(.badResponse))
+            } catch NetworkError.needsAuth {
+                state.send(.failure(.needsAuth))
+            } catch NetworkError.notFound {
+                state.send(.failure(.notFound))
+            } catch NetworkError.serviceDown {
+                state.send(.failure(.serviceDown))
             } catch {
-                print(String(describing: error))
+                state.send(.failure(.unknown))
             }
         }
     }
@@ -63,4 +71,5 @@ enum CharacterDetailState {
     case loading
     case success(CharacterDetailDecorator)
     case comics([CharacterDetailComicDecorator])
+    case failure(NetworkError)
 }

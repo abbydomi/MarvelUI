@@ -17,6 +17,8 @@ struct HomeView: View {
     @State private var showLoading = true
     @State private var searchText = ""
     @State private var orderSelection = OrderSelection.nameAscending
+    @State private var showError = false
+    @State private var errorMessage = ""
     
     // MARK: - View
     
@@ -47,8 +49,11 @@ struct HomeView: View {
             }
         }
     }
-    // MARK: - Bind to ViewModel
-    
+}
+// MARK: - Private Methods
+
+private extension HomeView {
+        
     func bind() {
         viewModel.getState().sink { state in
             switch state {
@@ -58,11 +63,16 @@ struct HomeView: View {
                 listDecorators = decorators
                 pageNumber = page + 1
                 showLoading = false
+            case .failure(let error):
+                router.handleError(error)
             }
         }
         .store(in: &viewModel.cancellables)
     }
+    
+    
 }
+
 //MARK: - Previews
 
 #Preview {

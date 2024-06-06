@@ -17,6 +17,8 @@ final class Router: ObservableObject {
     }
     
     @Published var path = NavigationPath()
+    @Published var errorMessage = ""
+    @Published var showError = false
     
     func popToRoot() {
         path.removeLast(path.count)
@@ -28,5 +30,21 @@ final class Router: ObservableObject {
     
     func navigateTo(_ destination: Destination) {
         path.append(destination)
+    }
+    
+    func handleError(_ error: NetworkError) {
+        switch error {
+        case .badResponse:
+            errorMessage = "The server response was invalid"
+        case .needsAuth:
+            errorMessage = "Authorization is needed to access the server"
+        case .serviceDown:
+            errorMessage = "The service is down"
+        case .notFound:
+            errorMessage = "The server did not find the data"
+        case .unknown:
+            errorMessage = "An unknown error has ocurred"
+        }
+        showError = true
     }
 }

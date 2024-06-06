@@ -70,15 +70,15 @@ private extension HomeViewModel {
                                                                                       orderBy: orderBy)
                 state.send(.success(characterListDecorators, page))
             } catch NetworkError.badResponse {
-                print("bad response")
+                state.send(.failure(.badResponse))
             } catch NetworkError.needsAuth {
-                print("auth")
+                state.send(.failure(.needsAuth))
             } catch NetworkError.notFound {
-                print("not found")
+                state.send(.failure(.notFound))
             } catch NetworkError.serviceDown {
-                print("service down")
+                state.send(.failure(.serviceDown))
             } catch {
-                print(String(describing: error))
+                state.send(.failure(.unknown))
             }
         }
         
@@ -90,6 +90,7 @@ private extension HomeViewModel {
 enum HomeState {
     case loading
     case success([CharacterListDecorator], Int)
+    case failure(NetworkError)
 }
 
 enum OrderSelection: String, Codable, Identifiable, CaseIterable  {
