@@ -17,10 +17,6 @@ struct CharacterDetailView: View {
     
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel
-        
-        // Adjusts title font to fit large superhero names
-        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
-        
     }
     
     var body: some View {
@@ -63,58 +59,11 @@ struct CharacterDetailView: View {
                     if let decorator = decorator {
                         CharacterDetailDataView(decorator: decorator)
                     }
-                    HStack {
-                        Text("Comics")
-                            .font(.title2)
-                            .foregroundStyle(.white)
-                            .fontDesign(.rounded)
-                            .bold()
-                        Spacer()
+                        
+                    if !comics.isEmpty {
+                        ComicCarousel(comics: $comics, decorator: $decorator)
+                            .padding(.horizontal, 40)
                     }
-                    .padding(.horizontal, 40)
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(comics) { comic in
-                                VStack {
-                                    AsyncImage(url: comic.imageURL) { image in
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                    } placeholder: {
-                                        ProgressView()
-                                            .progressViewStyle(.circular)
-                                            .foregroundStyle(.white)
-                                    }
-                                    if let comicURL = comic.comicURL {
-                                        Button {
-                                            router.navigateTo(.webView(url: comicURL))
-                                        } label: {
-                                            Text("More info")
-                                                .padding()
-                                                .background(.white)
-                                                .clipShape(.capsule)
-                                                .foregroundColor(.accent)
-                                        }
-                                    }
-                                    
-                                }
-                                .frame(width: 200)
-                            }
-                            if let comicURL = decorator?.comicURL {
-                                Button(action: {
-                                    router.navigateTo(.webView(url: comicURL))
-                                }, label: {
-                                    Text("More comics")
-                                        .foregroundStyle(.accent)
-                                        .padding()
-                                        .background(Color.white)
-                                        .clipShape(.capsule)
-                                })
-                                .padding()
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 40)
                 }
                 .ignoresSafeArea()
                 
