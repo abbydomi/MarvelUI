@@ -23,6 +23,8 @@ struct MarvelUIApp: App {
                         case .characterDetail(let characterId):
                             let viewModel = CharacterDetailViewModel(characterID: characterId)
                             CharacterDetailView(viewModel: viewModel)
+                        case .webView(url: let url):
+                            WebView(url: url)
                         }
                     }
             }

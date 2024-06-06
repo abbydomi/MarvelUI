@@ -44,4 +44,9 @@ class CharacterAPIClient: BaseAPIClient {
         let path = "characters/\(id)"
         return try await request(path).0
     }
+    
+    func getCharacterComics(id: Int) async throws -> Data {
+        let path = "characters/\(id)/comics"
+        return try await request(path).0
+    }
 }

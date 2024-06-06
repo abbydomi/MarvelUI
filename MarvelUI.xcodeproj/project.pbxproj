@@ -37,6 +37,8 @@
 		288340812C10F4180032D97A /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340802C10F4180032D97A /* CharacterDetailViewModel.swift */; };
 		288340842C10F5C50032D97A /* CharacterDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340832C10F5C50032D97A /* CharacterDetailDataManager.swift */; };
 		288340872C10F62A0032D97A /* CharacterDetailDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340862C10F62A0032D97A /* CharacterDetailDecorator.swift */; };
+		2883408C2C11C2CC0032D97A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883408B2C11C2CC0032D97A /* WebView.swift */; };
+		288340902C11CC150032D97A /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883408F2C11CC150032D97A /* Comic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		288340802C10F4180032D97A /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		288340832C10F5C50032D97A /* CharacterDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailDataManager.swift; sourceTree = "<group>"; };
 		288340862C10F62A0032D97A /* CharacterDetailDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailDecorator.swift; sourceTree = "<group>"; };
+		2883408B2C11C2CC0032D97A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2883408F2C11CC150032D97A /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		2883403A2C1092FD0032D97A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				2883408A2C11C2BF0032D97A /* WebView */,
 				288340852C10F5EA0032D97A /* Common */,
 				2883403D2C10933A0032D97A /* Splash */,
 				2883403C2C1093340032D97A /* Home */,
@@ -238,8 +243,8 @@
 		288340692C10DE600032D97A /* Comic */ = {
 			isa = PBXGroup;
 			children = (
-				2883406B2C10DE770032D97A /* Comics.swift */,
-				2883406D2C10DE870032D97A /* ComicsItem.swift */,
+				2883408E2C11CC000032D97A /* Comic */,
+				2883408D2C11CBF80032D97A /* Character */,
 			);
 			path = Comic;
 			sourceTree = "<group>";
@@ -305,6 +310,31 @@
 				288340502C10A7BF0032D97A /* CharacterAPIClient.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		2883408A2C11C2BF0032D97A /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				2883408B2C11C2CC0032D97A /* WebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		2883408D2C11CBF80032D97A /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				2883406B2C10DE770032D97A /* Comics.swift */,
+				2883406D2C10DE870032D97A /* ComicsItem.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		2883408E2C11CC000032D97A /* Comic */ = {
+			isa = PBXGroup;
+			children = (
+				2883408F2C11CC150032D97A /* Comic.swift */,
+			);
+			path = Comic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,10 +421,12 @@
 				2883404D2C10A7900032D97A /* HomeViewModel.swift in Sources */,
 				2883406C2C10DE770032D97A /* Comics.swift in Sources */,
 				2883405D2C10B60D0032D97A /* ComicCharacterDataIn.swift in Sources */,
+				2883408C2C11C2CC0032D97A /* WebView.swift in Sources */,
 				288340382C1092900032D97A /* Router.swift in Sources */,
 				288340562C10B3000032D97A /* CharacterListDecorator.swift in Sources */,
 				288340732C10DEB50032D97A /* StoriesItem.swift in Sources */,
 				2883402A2C108EB70032D97A /* MarvelUIApp.swift in Sources */,
+				288340902C11CC150032D97A /* Comic.swift in Sources */,
 				2883407F2C10EFA40032D97A /* CharacterDetailView.swift in Sources */,
 				288340512C10A7BF0032D97A /* CharacterAPIClient.swift in Sources */,
 				288340682C10DE0B0032D97A /* CharacterResult.swift in Sources */,

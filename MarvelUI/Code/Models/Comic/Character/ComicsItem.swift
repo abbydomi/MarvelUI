@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ComicsItem: Codable {
+struct ComicsItem: Codable, Hashable {
     let resourceURI: String
     let name: String
 }

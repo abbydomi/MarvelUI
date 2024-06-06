@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
     
     // MARK: - Properties
     
@@ -50,6 +50,7 @@ class HomeViewModel {
     }
     
     func searchCharacter(name: String, orderBy: OrderSelection) {
+        print("search start")
         state.send(.loading)
         offset = 0
         page = 0
@@ -68,6 +69,7 @@ private extension HomeViewModel {
                                                                                       offset: offset,
                                                                                       name: searchQuery,
                                                                                       orderBy: orderBy)
+                print("send search")
                 state.send(.success(characterListDecorators, page))
             } catch NetworkError.badResponse {
                 print("bad response")
@@ -97,6 +99,6 @@ enum OrderSelection: String, Codable, Identifiable, CaseIterable  {
     
     case nameAscending = "Name A-Z"
     case nameDescending = "Name Z-A"
-    case modifiedAscending = "Modified by Latest"
-    case modifiedDescending = "Modified by Oldest"
+    case modifiedAscending = "Modified by Oldest"
+    case modifiedDescending = "Modified by Latest"
 }

@@ -23,7 +23,7 @@ struct CharacterResult: Codable {
     }
 }
 
-struct URLElement: Codable {
+struct URLElement: Codable, Hashable {
     let type: String
     let url: String
 }

@@ -17,6 +17,7 @@ class CharacterDetailViewModel {
     
     init(characterID: Int) {
         getCharacter(id: characterID)
+        getComics(id: characterID)
     }
     
     func getState() -> AnyPublisher<CharacterDetailState, Never> {
@@ -44,9 +45,22 @@ private extension CharacterDetailViewModel {
             }
         }
     }
+    
+    func getComics(id: Int) {
+        Task {
+            do {
+                let comics = try await characterDataManager.getComicImagesFromCharacter(id: id)
+                print(comics)
+                state.send(.comics(comics))
+            } catch {
+                print(String(describing: error))
+            }
+        }
+    }
 }
 
 enum CharacterDetailState {
     case loading
     case success(CharacterDetailDecorator)
+    case comics([CharacterDetailComicDecorator])
 }

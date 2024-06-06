@@ -12,5 +12,5 @@ struct CharacterDetailDecorator {
     let name, description: String
     let modified: String
     let thumbnailURL: URL?
-    
+    let comicURL: URL?
 }
