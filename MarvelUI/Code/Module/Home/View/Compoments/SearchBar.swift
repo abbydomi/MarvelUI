@@ -32,7 +32,6 @@ struct SearchBar: View {
                     }
                 }
                 Button(action: {
-                    print("button hit")
                     viewModel.searchCharacter(name: searchText, orderBy: orderSelection)
                 }, label: {
                     Image(systemName: "magnifyingglass")

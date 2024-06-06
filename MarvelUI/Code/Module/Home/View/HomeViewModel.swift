@@ -50,7 +50,6 @@ class HomeViewModel: ObservableObject {
     }
     
     func searchCharacter(name: String, orderBy: OrderSelection) {
-        print("search start")
         state.send(.loading)
         offset = 0
         page = 0
@@ -69,7 +68,6 @@ private extension HomeViewModel {
                                                                                       offset: offset,
                                                                                       name: searchQuery,
                                                                                       orderBy: orderBy)
-                print("send search")
                 state.send(.success(characterListDecorators, page))
             } catch NetworkError.badResponse {
                 print("bad response")

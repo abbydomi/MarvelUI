@@ -50,7 +50,6 @@ struct HomeView: View {
     // MARK: - Bind to ViewModel
     
     func bind() {
-        print("binded")
         viewModel.getState().sink { state in
             switch state {
             case .loading:

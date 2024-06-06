@@ -53,7 +53,6 @@ class CharacterDetailDataManager {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         guard let date = dateFormatter.date(from: dateString) else {
-            print("Invalid date format")
             return nil
         }
         
@@ -61,7 +60,6 @@ class CharacterDetailDataManager {
         let currentDate = Date()
         let components = calendar.dateComponents([.day], from: date, to: currentDate)
         guard let days = components.day else {
-            print("Could not calculate days")
             return nil
         }
         
