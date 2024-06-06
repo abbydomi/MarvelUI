@@ -16,14 +16,19 @@ struct MarvelUIApp: App {
         WindowGroup {
             NavigationStack(path: $router.path) {
                 HomeView()
-                    .environmentObject(router)
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
-                        case .settings: SettingsView()
-                        default: Color.clear
+                        case .settings: 
+                            SettingsView()
+                        case .characterDetail(let characterId):
+                            let viewModel = CharacterDetailViewModel(characterID: characterId)
+                            CharacterDetailView(viewModel: viewModel)
+                        case .webView(url: let url):
+                            WebView(url: url)
                         }
                     }
             }
+            .environmentObject(router)
         }
     }
 }

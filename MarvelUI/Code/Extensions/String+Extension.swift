@@ -16,4 +16,22 @@ extension String {
             String(format: "%02hhx", $0)
         }.joined()
     }
+    
+    func getDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        return dateFormatter.date(from: self)
+    }
+}
+
+extension Date {
+    func string() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: self)
+    }
 }

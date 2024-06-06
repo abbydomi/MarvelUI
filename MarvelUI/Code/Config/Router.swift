@@ -13,6 +13,7 @@ final class Router: ObservableObject {
     public enum Destination: Codable, Hashable {
         case settings
         case characterDetail(characterId: Int)
+        case webView(url: URL)
     }
     
     @Published var path = NavigationPath()

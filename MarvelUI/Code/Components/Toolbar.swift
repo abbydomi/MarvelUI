@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ToolbarView: View {
     @EnvironmentObject var router: Router
+    @State var showBackButton = false
     
     var body: some View {
         Color.clear
@@ -25,9 +26,17 @@ struct ToolbarView: View {
                         }
                 }
                 HStack {
+                    if showBackButton {
+                        Button(action: {
+                            router.goBack()
+                        }, label: {
+                            Image(systemName: "chevron.left")
+                                .imageScale(.large)
+                                .foregroundStyle(.white)
+                        })
+                    }
                     Spacer()
                     Button(action: {
-                        print("hehehooho")
                         router.navigateTo(.settings)
                     }, label: {
                         Image(systemName: "gear")

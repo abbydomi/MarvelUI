@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var router: Router
-    private var viewModel = HomeViewModel()
+    @State private var viewModel = HomeViewModel()
     
     @State private var listDecorators: [CharacterListDecorator]?
     @State private var pageNumber: Int = 0
@@ -20,7 +20,6 @@ struct HomeView: View {
     
     var body: some View {
         ToolbarView()
-            .environmentObject(router)
         if showLoading {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: Color.accentColor))
@@ -46,6 +45,7 @@ struct HomeView: View {
                         }
                     }
                     Button(action: {
+                        print("button hit")
                         viewModel.searchCharacter(name: searchText, orderBy: orderSelection)
                     }, label: {
                         Image(systemName: "magnifyingglass")
@@ -134,6 +134,7 @@ struct HomeView: View {
     }
     
     func bind() {
+        print("binded")
         viewModel.getState().sink { state in
             switch state {
             case .loading:
@@ -151,6 +152,6 @@ struct HomeView: View {
 #Preview {
     NavigationStack {
         HomeView()
-            .environmentObject(Router())
     }
+    .environmentObject(Router())
 }

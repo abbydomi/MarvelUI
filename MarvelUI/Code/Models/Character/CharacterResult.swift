@@ -23,7 +23,20 @@ struct CharacterResult: Codable {
     }
 }
 
-struct URLElement: Codable {
+struct URLElement: Codable, Hashable {
     let type: String
     let url: String
 }
+
+struct Comics: Codable {
+    let available: Int
+    let collectionURI: String
+    let items: [ComicsItem]
+    let returned: Int
+}
+
+struct ComicsItem: Codable, Hashable {
+    let resourceURI: String
+    let name: String
+}
+
