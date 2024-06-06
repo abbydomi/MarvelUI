@@ -11,5 +11,3 @@ struct ComicDataIn: Codable {
     let code: Int
     let data: ComicDataClass
 }
-
-

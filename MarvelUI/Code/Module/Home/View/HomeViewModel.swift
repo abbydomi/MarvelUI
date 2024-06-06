@@ -93,7 +93,7 @@ enum HomeState {
     case failure(NetworkError)
 }
 
-enum OrderSelection: String, Codable, Identifiable, CaseIterable  {
+enum OrderSelection: String, Codable, Identifiable, CaseIterable {
     var id: Self { self }
     
     case nameAscending = "Name A-Z"
