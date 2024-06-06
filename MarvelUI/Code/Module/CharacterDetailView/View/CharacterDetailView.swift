@@ -9,15 +9,20 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     
+    // MARK: - Properties
+    
     @EnvironmentObject var router: Router
     @State private var showLoading = true
     @State private var decorator: CharacterDetailDecorator?
     @State private var comics: [CharacterDetailComicDecorator] = []
     @State var viewModel: CharacterDetailViewModel
     
+    // MARK: - Lifecycle
+    
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel
     }
+    // MARK: - View
     
     var body: some View {
         if showLoading {
@@ -28,33 +33,10 @@ struct CharacterDetailView: View {
         } else {
             VStack(spacing: 0) {
                 ScrollView {
-                    AsyncImage(url: decorator?.thumbnailURL) { image in
-                        ZStack {
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(maxWidth: .infinity)
-                                
-                            VStack {
-                                Spacer()
-                                Rectangle()
-                                    .fill(LinearGradient(colors: [.accent, .clear], startPoint: .bottom, endPoint: .center))
-                                    .frame(height: 40)
-                            }
-                        }
-                        .frame(height: UIScreen.main.bounds.height / 3)
-                    } placeholder: {
-                        ZStack {
-                            Color.gray
-                                .frame(height: UIScreen.main.bounds.height / 3)
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                        }
-                    }
                     if let decorator = decorator {
+                        CharacterBanner(decorator: decorator)
                         CharacterFile(decorator: decorator)
                     }
-                        
                     if !comics.isEmpty {
                         ComicCarousel(comics: $comics, decorator: $decorator)
                             .padding(.horizontal, 40)
@@ -69,6 +51,7 @@ struct CharacterDetailView: View {
         }
        
     }
+    // MARK: - Bind to ViewModel
     
     func bind() {
         viewModel.getState().sink { state in
@@ -86,6 +69,7 @@ struct CharacterDetailView: View {
         .store(in: &viewModel.cancellables)
     }
 }
+    // MARK: - Preview
 
 #Preview {
     NavigationStack {

@@ -44,6 +44,7 @@
 		2883409D2C11EFE70032D97A /* CharacterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883409C2C11EFE70032D97A /* CharacterFile.swift */; };
 		288340A12C11F07D0032D97A /* ButtonGoBackPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */; };
 		288340A32C11F11E0032D97A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A22C11F11E0032D97A /* LoaderView.swift */; };
+		288340A52C11F1F40032D97A /* CharacterBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A42C11F1F40032D97A /* CharacterBanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		2883409C2C11EFE70032D97A /* CharacterFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFile.swift; sourceTree = "<group>"; };
 		288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGoBackPrimary.swift; sourceTree = "<group>"; };
 		288340A22C11F11E0032D97A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		288340A42C11F1F40032D97A /* CharacterBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 			children = (
 				2883409A2C11ED050032D97A /* ComicCarousel.swift */,
 				2883409C2C11EFE70032D97A /* CharacterFile.swift */,
+				288340A42C11F1F40032D97A /* CharacterBanner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				288340512C10A7BF0032D97A /* CharacterAPIClient.swift in Sources */,
 				288340682C10DE0B0032D97A /* CharacterResult.swift in Sources */,
 				288340422C1094B70032D97A /* NetworkError.swift in Sources */,
+				288340A52C11F1F40032D97A /* CharacterBanner.swift in Sources */,
 				288340782C10E0CA0032D97A /* View+Extension.swift in Sources */,
 				288340462C1095370032D97A /* NetworkMonitor.swift in Sources */,
 				2883409D2C11EFE70032D97A /* CharacterFile.swift in Sources */,
