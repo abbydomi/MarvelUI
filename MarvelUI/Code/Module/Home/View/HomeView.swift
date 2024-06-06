@@ -21,8 +21,7 @@ struct HomeView: View {
     var body: some View {
         ToolbarView()
         if showLoading {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: Color.accentColor))
+            LoaderView()
                 .onAppear(perform: bind)
         } else {
             VStack {

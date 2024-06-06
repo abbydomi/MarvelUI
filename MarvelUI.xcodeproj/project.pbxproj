@@ -43,6 +43,7 @@
 		2883409B2C11ED050032D97A /* ComicCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883409A2C11ED050032D97A /* ComicCarousel.swift */; };
 		2883409D2C11EFE70032D97A /* CharacterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883409C2C11EFE70032D97A /* CharacterFile.swift */; };
 		288340A12C11F07D0032D97A /* ButtonGoBackPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */; };
+		288340A32C11F11E0032D97A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A22C11F11E0032D97A /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		2883409A2C11ED050032D97A /* ComicCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCarousel.swift; sourceTree = "<group>"; };
 		2883409C2C11EFE70032D97A /* CharacterFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFile.swift; sourceTree = "<group>"; };
 		288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGoBackPrimary.swift; sourceTree = "<group>"; };
+		288340A22C11F11E0032D97A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */,
+				288340A22C11F11E0032D97A /* LoaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				288340872C10F62A0032D97A /* CharacterDetailDecorator.swift in Sources */,
 				2883404F2C10A7B40032D97A /* HomeDataManager.swift in Sources */,
 				2883403F2C1093730032D97A /* Environment.swift in Sources */,
+				288340A32C11F11E0032D97A /* LoaderView.swift in Sources */,
 				288340712C10DE9E0032D97A /* Stories.swift in Sources */,
 				288340812C10F4180032D97A /* CharacterDetailViewModel.swift in Sources */,
 				288340442C1094D70032D97A /* BaseAPIClient.swift in Sources */,

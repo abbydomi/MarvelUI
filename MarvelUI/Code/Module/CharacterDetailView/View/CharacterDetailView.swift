@@ -22,14 +22,9 @@ struct CharacterDetailView: View {
     var body: some View {
         if showLoading {
             ZStack {
-                Color.accentColor
-                    .ignoresSafeArea()
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                LoaderView(backgroundColor: .accent, spinnerColor: .white)
                     .onAppear(perform: bind)
             }
-            
-                
         } else {
             VStack(spacing: 0) {
                 ScrollView {
