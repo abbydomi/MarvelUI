@@ -57,7 +57,7 @@ struct CharacterDetailView: View {
                         }
                     }
                     if let decorator = decorator {
-                        CharacterDetailDataView(decorator: decorator)
+                        CharacterFile(decorator: decorator)
                     }
                         
                     if !comics.isEmpty {
@@ -100,31 +100,6 @@ struct CharacterDetailView: View {
             }
         }
         .store(in: &viewModel.cancellables)
-    }
-}
-
-struct CharacterDetailDataView: View {
-    @EnvironmentObject var router: Router
-    @State var decorator: CharacterDetailDecorator
-    
-    var body: some View {
-        VStack {
-            Text(decorator.name)
-                .padding(.horizontal)
-                .fontDesign(.rounded)
-                .bold()
-                .font(.system(size: 56))
-                .minimumScaleFactor(0.1)
-                .lineLimit(1)
-                .foregroundStyle(.white)
-            Text("Last modified: \(decorator.modified) days ago.")
-                .font(.footnote)
-                .foregroundStyle(.white)
-            Text(!decorator.description.isEmpty ? decorator.description : "No description available.")
-                .padding()
-                .foregroundColor(.white)
-        }
-        .padding(.horizontal, 25)
     }
 }
 

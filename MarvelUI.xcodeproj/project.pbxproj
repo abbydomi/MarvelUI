@@ -41,6 +41,7 @@
 		288340952C11E2770032D97A /* ComicDataIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340942C11E2770032D97A /* ComicDataIn.swift */; };
 		288340972C11E2840032D97A /* ComicDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340962C11E2840032D97A /* ComicDataClass.swift */; };
 		2883409B2C11ED050032D97A /* ComicCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883409A2C11ED050032D97A /* ComicCarousel.swift */; };
+		2883409D2C11EFE70032D97A /* CharacterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883409C2C11EFE70032D97A /* CharacterFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		288340942C11E2770032D97A /* ComicDataIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataIn.swift; sourceTree = "<group>"; };
 		288340962C11E2840032D97A /* ComicDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataClass.swift; sourceTree = "<group>"; };
 		2883409A2C11ED050032D97A /* ComicCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCarousel.swift; sourceTree = "<group>"; };
+		2883409C2C11EFE70032D97A /* CharacterFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				2883409A2C11ED050032D97A /* ComicCarousel.swift */,
+				2883409C2C11EFE70032D97A /* CharacterFile.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				288340422C1094B70032D97A /* NetworkError.swift in Sources */,
 				288340782C10E0CA0032D97A /* View+Extension.swift in Sources */,
 				288340462C1095370032D97A /* NetworkMonitor.swift in Sources */,
+				2883409D2C11EFE70032D97A /* CharacterFile.swift in Sources */,
 				288340932C11E2530032D97A /* CharacterDetailComicDecorator.swift in Sources */,
 				288340622C10BDE30032D97A /* String+Extension.swift in Sources */,
 				288340842C10F5C50032D97A /* CharacterDetailDataManager.swift in Sources */,
