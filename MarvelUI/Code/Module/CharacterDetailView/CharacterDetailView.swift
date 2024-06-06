@@ -13,7 +13,7 @@ struct CharacterDetailView: View {
     @State private var showLoading = true
     @State private var decorator: CharacterDetailDecorator?
     @State private var comics: [CharacterDetailComicDecorator] = []
-    var viewModel: CharacterDetailViewModel
+    @State var viewModel: CharacterDetailViewModel
     
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel

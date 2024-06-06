@@ -7,23 +7,9 @@
 
 import Foundation
 
-struct CharacterDetailComicDecorator: Codable, Identifiable {
-    let id: Int
-    let title: String
-    let imageURL: URL?
-    let comicURL: URL?
-}
 
-struct ComicDataIn: Codable {
-    let code: Int
-    let data: ComicDataContainer
-}
 
-struct ComicDataContainer: Codable {
-    let results: [Comic]
-}
-
-struct Comic: Codable, Identifiable {
+struct ComicResult: Codable, Identifiable {
     let id: Int
     let title: String
     let thumbnail: Thumbnail
