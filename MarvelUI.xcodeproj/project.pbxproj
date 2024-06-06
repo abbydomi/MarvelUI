@@ -398,6 +398,7 @@
 				288340222C108EB70032D97A /* Sources */,
 				288340232C108EB70032D97A /* Frameworks */,
 				288340242C108EB70032D97A /* Resources */,
+				288340B42C1209860032D97A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -453,6 +454,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		288340B42C1209860032D97A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		288340222C108EB70032D97A /* Sources */ = {
@@ -632,6 +654,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MarvelUI/Preview Content\"";
 				DEVELOPMENT_TEAM = KB6MXUCGP3;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarvelUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -662,6 +685,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MarvelUI/Preview Content\"";
 				DEVELOPMENT_TEAM = KB6MXUCGP3;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarvelUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

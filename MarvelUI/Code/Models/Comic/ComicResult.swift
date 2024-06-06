@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct ComicResult: Codable, Identifiable {
     let id: Int
     let title: String

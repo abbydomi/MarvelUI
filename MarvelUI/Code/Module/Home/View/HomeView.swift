@@ -32,7 +32,7 @@ struct HomeView: View {
                 SearchBar(viewModel: $viewModel, orderSelection: $orderSelection, searchText: $searchText)
                 ScrollViewReader { value in
                     ScrollView {
-                        LazyVStack() {
+                        LazyVStack {
                             ForEach(listDecorators ?? []) { decorator in
                                 CharacterCell(decorator: decorator)
                                     .onTapGesture {
@@ -69,11 +69,9 @@ private extension HomeView {
         }
         .store(in: &viewModel.cancellables)
     }
-    
-    
 }
 
-//MARK: - Previews
+// MARK: - Previews
 
 #Preview {
     NavigationStack {

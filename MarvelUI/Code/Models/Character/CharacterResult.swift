@@ -39,4 +39,3 @@ struct ComicsItem: Codable, Hashable {
     let resourceURI: String
     let name: String
 }
-
