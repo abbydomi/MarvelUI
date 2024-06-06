@@ -66,19 +66,8 @@ struct CharacterDetailView: View {
                     }
                 }
                 .ignoresSafeArea()
-                
                 Spacer()
-                Button {
-                    router.goBack()
-                } label: {
-                    Text("Go back")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.white)
-                        .clipShape(.capsule)
-                        .padding(.horizontal)
-                }
-
+                ButtonGoBackPrimary()
             }
             .background(Color.accentColor)
             .navigationBarBackButtonHidden()
