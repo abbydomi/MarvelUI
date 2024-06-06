@@ -19,16 +19,7 @@ struct WebView: View {
                 .ignoresSafeArea()
             VStack {
                 WebViewRepresentable(url: url)
-                Button {
-                    router.goBack()
-                } label: {
-                    Text("Go back")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.white)
-                        .clipShape(.capsule)
-                        .padding(.horizontal)
-                }
+                ButtonGoBackPrimary()
             }
         }
         .navigationBarBackButtonHidden()
