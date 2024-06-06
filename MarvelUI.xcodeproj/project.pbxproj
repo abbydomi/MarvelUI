@@ -45,6 +45,9 @@
 		288340A12C11F07D0032D97A /* ButtonGoBackPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */; };
 		288340A32C11F11E0032D97A /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A22C11F11E0032D97A /* LoaderView.swift */; };
 		288340A52C11F1F40032D97A /* CharacterBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A42C11F1F40032D97A /* CharacterBanner.swift */; };
+		288340A82C11F3860032D97A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A72C11F3860032D97A /* SearchBar.swift */; };
+		288340AA2C11F4930032D97A /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340A92C11F4930032D97A /* CharacterCell.swift */; };
+		288340AC2C11F50A0032D97A /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288340AB2C11F50A0032D97A /* PageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		288340A02C11F07D0032D97A /* ButtonGoBackPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGoBackPrimary.swift; sourceTree = "<group>"; };
 		288340A22C11F11E0032D97A /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		288340A42C11F1F40032D97A /* CharacterBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBanner.swift; sourceTree = "<group>"; };
+		288340A72C11F3860032D97A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		288340A92C11F4930032D97A /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		288340AB2C11F50A0032D97A /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +181,9 @@
 		2883403C2C1093340032D97A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				288340592C10B4370032D97A /* View */,
 				2883405B2C10B44E0032D97A /* Decorator */,
 				2883405A2C10B4430032D97A /* Model */,
-				288340592C10B4370032D97A /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			children = (
 				2883402B2C108EB70032D97A /* HomeView.swift */,
 				2883404C2C10A7900032D97A /* HomeViewModel.swift */,
+				288340A62C11F36A0032D97A /* Compoments */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +378,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		288340A62C11F36A0032D97A /* Compoments */ = {
+			isa = PBXGroup;
+			children = (
+				288340A72C11F3860032D97A /* SearchBar.swift */,
+				288340A92C11F4930032D97A /* CharacterCell.swift */,
+				288340AB2C11F50A0032D97A /* PageControl.swift */,
+			);
+			path = Compoments;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,6 +464,7 @@
 				288340662C10DDE50032D97A /* CharacterDataClass.swift in Sources */,
 				288340972C11E2840032D97A /* ComicDataClass.swift in Sources */,
 				288340542C10AEE30032D97A /* Toolbar.swift in Sources */,
+				288340A82C11F3860032D97A /* SearchBar.swift in Sources */,
 				288340872C10F62A0032D97A /* CharacterDetailDecorator.swift in Sources */,
 				2883404F2C10A7B40032D97A /* HomeDataManager.swift in Sources */,
 				2883403F2C1093730032D97A /* Environment.swift in Sources */,
@@ -459,7 +477,9 @@
 				2883405D2C10B60D0032D97A /* ComicCharacterDataIn.swift in Sources */,
 				2883408C2C11C2CC0032D97A /* WebView.swift in Sources */,
 				288340382C1092900032D97A /* Router.swift in Sources */,
+				288340AC2C11F50A0032D97A /* PageControl.swift in Sources */,
 				288340952C11E2770032D97A /* ComicDataIn.swift in Sources */,
+				288340AA2C11F4930032D97A /* CharacterCell.swift in Sources */,
 				288340562C10B3000032D97A /* CharacterListDecorator.swift in Sources */,
 				2883409B2C11ED050032D97A /* ComicCarousel.swift in Sources */,
 				288340732C10DEB50032D97A /* StoriesItem.swift in Sources */,

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
-    
     // MARK: - Properties
     
     @EnvironmentObject var router: Router
@@ -16,7 +15,6 @@ struct CharacterDetailView: View {
     @State private var decorator: CharacterDetailDecorator?
     @State private var comics: [CharacterDetailComicDecorator] = []
     @State var viewModel: CharacterDetailViewModel
-    
     // MARK: - Lifecycle
     
     init(viewModel: CharacterDetailViewModel) {
