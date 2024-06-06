@@ -147,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				288340792C10EBCA0032D97A /* Models */,
-				288340522C10AEDA0032D97A /* Components */,
 				2883403A2C1092FD0032D97A /* Module */,
 				288340602C10BDD80032D97A /* Extensions */,
 				2883403B2C1093050032D97A /* Config */,
@@ -204,13 +203,6 @@
 				288340432C1094D70032D97A /* BaseAPIClient.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		288340522C10AEDA0032D97A /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		288340592C10B4370032D97A /* View */ = {
@@ -363,6 +355,7 @@
 		2883409E2C11F0670032D97A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				288340B32C1205730032D97A /* View */,
 				2883409F2C11F06A0032D97A /* Components */,
 			);
 			path = Common;
@@ -386,6 +379,13 @@
 				288340AB2C11F50A0032D97A /* PageControl.swift */,
 			);
 			path = Compoments;
+			sourceTree = "<group>";
+		};
+		288340B32C1205730032D97A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
